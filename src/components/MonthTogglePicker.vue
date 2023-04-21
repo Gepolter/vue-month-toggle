@@ -132,7 +132,9 @@ export default {
                 this.activityArray[monthInt].active = false
                 this.monthsArray = this.monthsArray.filter(e => !(e.year == this.year && e.month == monthInt))
             }
+            console.log(this.selectionMode)
             if(this.selectionMode=="onToggle"){
+                console.log("setting timeslots")
                 this.setTimeslot()
             }
         },
@@ -172,9 +174,8 @@ export default {
                     return a.year < b.year ? -1 : 1
                 }
             })
-            this.value = this.monthsArray
+            this.value = JSON.parse(JSON.stringify(this.monthsArray))
         }
-
     },
     created(){
         //this.modelValue = this.getTimeslots
