@@ -6,6 +6,9 @@
 
 ## Vue3
 
+Live Demo: <https://component-library-demo.vercel.app/>
+NPM: <https://www.npmjs.com/package/vue-month-toggle-component>
+
 This component generates a chronologically sorted array of JSON-objects containing month and year parameters
 
 ## Install
