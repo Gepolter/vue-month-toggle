@@ -8,7 +8,7 @@
 
 Live Demo: <https://component-library-demo.vercel.app/>  
 GitHub: <https://github.com/Gepolter/vue-month-toggle>
-NPM: <https://www.npmjs.com/package/vue-month-toggle-component>  
+npm: <https://www.npmjs.com/package/vue-month-toggle-component>  
 
 This component generates a chronologically sorted array of JSON-objects containing month and year parameters
 
@@ -42,7 +42,7 @@ Will change css import in later version. For now css has to be be imported via n
 ## Props and v-model binding
 ```
 props: [
-    {name: "locale", options:["en","de"]},
+    {name: "locale", options:["en","de", "fr", "sp", "jp"]},
     {name: "textMode", options:["fullText", "abbreviated"]},
     {name: "selectionMode", options:["onConfirm", "onToggle"]}
 ]
