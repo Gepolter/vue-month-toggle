@@ -77,6 +77,14 @@
       }
     },
   }
+  /*npm version workflow
+    npm run dev
+    npm run build
+    npm login
+    npm publish --dry-run
+    npm version patch
+    npm publish
+  */
 </script>
 
 <style scoped>
