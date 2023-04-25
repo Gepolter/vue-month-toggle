@@ -51,16 +51,16 @@
           {
             name: "MonthTogglePicker",
             props: [
-              	{name: "locale", options:["en","de"]},
+              	{name: "locale", options:["en","de", "fr", "sp","jp"]},
                 {name: "textMode", options:["fullText", "abbreviated"]},
                 {name: "selectionModes", options:["onConfirm", "onToggle"]}
             ]
           }
         ],
         localeSelect: "de",
-        textModeSelect: "abbreviated",
-        selectionModeSelect: "onToggle",
-        returnedObjMonthToggle: [{year:2023, month:0}]
+        textModeSelect: "fullText",
+        selectionModeSelect: "onConfirm",
+        returnedObjMonthToggle: []
       }
     },
     computed:{

@@ -1,7 +1,9 @@
 {
   "name": "vue-month-toggle-component",
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "README.md"
   ],
   "main": "./dist/vue-month-toggle-umd.js",
   "module": "./dist/vue-month-toggle.es.js",
@@ -11,6 +13,7 @@
       "require": "./dist/vue-month-toggle.umd.js"
     }
   },
+  "license":"MIT",
   "keywords": [
     "component-library",
     "month-picker",

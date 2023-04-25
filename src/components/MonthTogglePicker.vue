@@ -1,38 +1,36 @@
 <template>
     <div class="filter-wrapper">
         <div class="nav-menu-item" :class="{expand : clicked, collapse : !(clicked)}">
-            <div class="nav-header"
-            >
+            <div class="nav-header">
                 <!--
                 @click="clicked = !clicked"   
                 -->
                 <!--img class="image-fit" src="../assets/images/calendar.png" alt="Monate"-->
             </div>
-                <div class="year-picker">
-                    <div class="btn-div">
-                        <button @click="prevYear()">&lt;</button>
-                        <div>{{this.year}}</div>
-                        <button @click="nextYear()">></button>
-                    </div>
-                    <hr class="rounded">
-                    <div class="animated-grid" id="grid">
-                        <div id="c0" class="card" :class="[activityArray[0].active ? 'active' : 'inactive']" @click="toggleMonth(0)">{{ getLocaleMonth(0) }}</div>
-                        <div id="c1" class="card" :class="[activityArray[1].active ? 'active' : 'inactive']" @click="toggleMonth(1)">{{ getLocaleMonth(1) }}</div>
-                        <div id="c2" class="card" :class="[activityArray[2].active ? 'active' : 'inactive']" @click="toggleMonth(2)">{{ getLocaleMonth(2) }}</div>
-                        <div id="c3" class="card" :class="[activityArray[3].active ? 'active' : 'inactive']" @click="toggleMonth(3)">{{ getLocaleMonth(3) }}</div>
-                        <div id="c4" class="card" :class="[activityArray[4].active ? 'active' : 'inactive']" @click="toggleMonth(4)">{{ getLocaleMonth(4) }}</div>
-                        <div id="c5" class="card" :class="[activityArray[5].active ? 'active' : 'inactive']" @click="toggleMonth(5)">{{ getLocaleMonth(5) }}</div>
-                        <div id="c6" class="card" :class="[activityArray[6].active ? 'active' : 'inactive']" @click="toggleMonth(6)">{{ getLocaleMonth(6) }}</div>
-                        <div id="c7" class="card" :class="[activityArray[7].active ? 'active' : 'inactive']" @click="toggleMonth(7)">{{ getLocaleMonth(7) }}</div>
-                        <div id="c8" class="card" :class="[activityArray[8].active ? 'active' : 'inactive']" @click="toggleMonth(8)">{{ getLocaleMonth(8) }}</div>
-                        <div id="c9" class="card" :class="[activityArray[9].active ? 'active' : 'inactive']" @click="toggleMonth(9)">{{ getLocaleMonth(9) }}</div>
-                        <div id="c10" class="card" :class="[activityArray[10].active ? 'active' : 'inactive']" @click="toggleMonth(10)">{{ getLocaleMonth(10) }}</div>
-                        <div id="c11" class="card" :class="[activityArray[11].active ? 'active' : 'inactive']" @click="toggleMonth(11)">{{ getLocaleMonth(11) }}</div>
-                    </div>
-                    <button v-if="selectionMode=='onConfirm'" @click="setTimeslot()">confirm</button>
+            <div class="year-picker">
+                <div class="btn-div">
+                    <button @click="prevYear()">&lt;</button>
+                    <div>{{this.year}}</div>
+                    <button @click="nextYear()">></button>
                 </div>
+                <hr class="rounded">
+                <div class="animated-grid" id="grid">
+                    <div id="c0" class="card" :class="[activityArray[0].active ? 'active' : 'inactive']" @click="toggleMonth(0)">{{ getLocaleMonth(0) }}</div>
+                    <div id="c1" class="card" :class="[activityArray[1].active ? 'active' : 'inactive']" @click="toggleMonth(1)">{{ getLocaleMonth(1) }}</div>
+                    <div id="c2" class="card" :class="[activityArray[2].active ? 'active' : 'inactive']" @click="toggleMonth(2)">{{ getLocaleMonth(2) }}</div>
+                    <div id="c3" class="card" :class="[activityArray[3].active ? 'active' : 'inactive']" @click="toggleMonth(3)">{{ getLocaleMonth(3) }}</div>
+                    <div id="c4" class="card" :class="[activityArray[4].active ? 'active' : 'inactive']" @click="toggleMonth(4)">{{ getLocaleMonth(4) }}</div>
+                    <div id="c5" class="card" :class="[activityArray[5].active ? 'active' : 'inactive']" @click="toggleMonth(5)">{{ getLocaleMonth(5) }}</div>
+                    <div id="c6" class="card" :class="[activityArray[6].active ? 'active' : 'inactive']" @click="toggleMonth(6)">{{ getLocaleMonth(6) }}</div>
+                    <div id="c7" class="card" :class="[activityArray[7].active ? 'active' : 'inactive']" @click="toggleMonth(7)">{{ getLocaleMonth(7) }}</div>
+                    <div id="c8" class="card" :class="[activityArray[8].active ? 'active' : 'inactive']" @click="toggleMonth(8)">{{ getLocaleMonth(8) }}</div>
+                    <div id="c9" class="card" :class="[activityArray[9].active ? 'active' : 'inactive']" @click="toggleMonth(9)">{{ getLocaleMonth(9) }}</div>
+                    <div id="c10" class="card" :class="[activityArray[10].active ? 'active' : 'inactive']" @click="toggleMonth(10)">{{ getLocaleMonth(10) }}</div>
+                    <div id="c11" class="card" :class="[activityArray[11].active ? 'active' : 'inactive']" @click="toggleMonth(11)">{{ getLocaleMonth(11) }}</div>
+                </div>
+                <button v-if="selectionMode=='onConfirm'" @click="setTimeslot()">confirm</button>
             </div>
-        
+        </div>
     </div>
 </template>
 
@@ -75,7 +73,23 @@ export default {
                     name:"de",
                     months:["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
                     dateFormat: "dd-mm-yyyy"
+                },
+                {
+                    name:"fr",
+                    months:["Janivier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+                    dateFormat: "dd-mm-yyyy"
+                },
+                {
+                    name:"sp",
+                    months:["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                    dateFormat: "dd-mm-yyyy"
+                },                
+                {
+                    name:"jp",
+                    months:["ichi-gatsu", "ni-gatsu", "san-gatsu", "shi-gatsu", "go-gatsu", "roku-gatsu", "shichi-gatsu", "hachi-gatsu", "ku-gatsu", "juu-gatsu", "juuichi-gatsu", "juuni-gatsu"],
+                    dateFormat: "dd-mm-yyyy"
                 }
+
             ],
             textModes:[
                 "fullText", "abbreviated"
@@ -96,12 +110,13 @@ export default {
         },
         textMode: {
             type: String,
-            default: "abbreviated"
+            default: "fullText"
         },
         selectionMode: {
             type: String,
             default: "onConfirm"
-        }
+        },
+        themes: []
     },
     emits:['update:modelValue'],
         
@@ -307,7 +322,8 @@ export default {
         background-position: center;
         animation: cardEntrance 700ms ease-out;
         animation-fill-mode: backwards;
-        
+        caret-color: transparent;
+        cursor: pointer;
     }
     .active{
         color: black;
@@ -327,5 +343,18 @@ export default {
         border-top: 8px solid #bbb;
         border-radius: 5px;
         width: 100%;
+    }
+    
+
+    /*themes*/
+    .light{
+        --color: grey;
+        background: whitesmoke;
+    }
+    .background-style{
+        transition: all 2s;
+    }
+    .text{
+        transition: all 2s;
     }
 </style>
